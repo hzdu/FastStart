@@ -5,5 +5,4 @@ output/
 
 # ignore log files and databases
 FastStart_Pyinstaller.json
-.gitignore
 *.bat
