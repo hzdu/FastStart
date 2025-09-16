@@ -1,0 +1,477 @@
+/* 无边框暗色模式样式表 */
+
+/* 无边框窗口样式 */
+QMainWindow {
+    background-color: #1a1a1a;
+    border-top: 2px solid #2e7d32;
+    border-left: 2px solid #2e7d32;
+    border-right: 2px solid #2e7d32;
+}
+
+/* 自定义标题栏样式 */
+#customTitleBar {
+    background-color: #1a1a1a;
+    border-left: 2px solid #2e7d32;
+    border-right: 2px solid #2e7d32;
+    border-bottom: 2px solid #333333;
+    min-height: 36px;
+}
+
+/* 标题栏按钮样式 */
+#titleBarButtons {
+    background-color: transparent;
+    border: none;
+    min-width: 14px;
+    min-height: 14px;
+}
+
+#titleBarButtons:hover {
+    background-color: #4a4a4a;
+}
+
+#titleBarButtons:pressed {
+    background-color: #5a5a5a;
+}
+
+/* 新增置顶按钮样式 */
+#pinButton {
+    background-color: transparent;
+    border: none;
+    min-width: 14px;
+    min-height: 14px;
+    image: url('assets/images/pin.png');
+}
+
+#pinButton:hover {
+    background-color: #4a4a4a;
+}
+
+#pinButton:pressed {
+    background-color: #5a5a5a;
+}
+
+#pinButton:checked {
+    background-color: #007aff;
+    border: none;
+}
+
+#pinButton:checked:hover {
+    background-color: #008fff;  /* 稍亮的悬停效果 */
+}
+
+#pinButton:checked:pressed {
+    background-color: #006fd6;  /* 稍暗的按下效果 */
+}
+
+/* 新增最小化按钮样式 */
+#minimizeButton {
+    background-color: transparent;
+    border: none;
+    min-width: 14px;
+    min-height: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#minimizeButton:hover {
+    background-color: #4a4a4a;
+}
+
+#minimizeButton:pressed {
+    background-color: #5a5a5a;
+}
+
+/* 主窗口样式 */
+
+/* 表格样式 */
+QTableWidget {
+    background-color: #2d2d2d;
+    border: none;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 10px;
+    gridline-color: #4a4a4a; /* 设置网格线颜色 */
+}
+
+/* 表格项样式 */
+QTableWidget::item {
+    background-color: transparent;
+    padding-left: 10px;
+    color: #ffffff;
+    border-bottom: 1px solid #4a4a4a; /* 添加底部边框作为分隔线 */
+}
+
+/* 表格选中项样式 */
+QTableWidget::item:selected {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border-left: 4px solid #007aff; /* 保持蓝色条加粗 */
+}
+
+/* 表头样式 */
+QHeaderView::section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 5px;
+    border: 1px solid #2d2d2d;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 按钮样式 */
+QPushButton {
+    background-color: #2e7d32;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+QPushButton:hover {
+    background-color: #388e3c;
+}
+
+QPushButton:pressed {
+    background-color: #43a047;
+}
+
+/* 输入控件焦点样式 */
+QLineEdit:focus, QSpinBox:focus {
+    border: 1px solid #5a5a5a;
+    background-color: #3a3a3a;
+}
+
+/* QSpinBox控件样式 */
+QSpinBox {
+    background-color: #2d2d2d;
+    border: none;
+    color: #ffffff;
+    padding: 5px;
+}
+
+QSpinBox::up-button {
+    background-color: #3a3a3a;
+    border: none;
+    width: 16px;
+    height: 16px;
+    image: url(assets/images/up-arrow.png);
+}
+
+QSpinBox::down-button {
+    background-color: #3a3a3a;
+    border: none;
+    width: 16px;
+    height: 16px;
+    image: url(assets/images/down-arrow.png);
+}
+
+QSpinBox::up-button:hover {
+    background-color: #4a4a4a;
+}
+
+QSpinBox::down-button:hover {
+    background-color: #4a4a4a;
+}
+
+/* 更精细的控制 */
+QSpinBox#mainSpinBox {
+    background-color: #2d2d2d;
+    border: none;
+    color: #ffffff;
+    padding: 5px;
+}
+
+QSpinBox#subSpinBox {
+    background-color: #3a3a3a;
+    border: none;
+    color: #cccccc;
+    padding: 5px;
+}
+
+/* 状态栏样式 */
+QStatusBar {
+    color: #ffffff;
+    background-color: #2d2d2d;
+    min-height: 32px; /* 添加固定高度 */
+    font-size: 14px; /* 字体大小适配新高度 */
+    border-top: 2px solid #2e7d32;
+}
+
+/* 状态栏消息样式 */
+QStatusBar::item {
+    border: none;
+    padding: 5px;
+}
+
+/* 添加到faststart.qss文件中 */
+QLabel {
+    color: #ffffff; /* 白色文字，确保高对比度 */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 针对特定场景的优化 */
+QLabel[style="font-weight: bold"] {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* 确保所有状态下的可见性 */
+QLabel:hover {
+    color: #ffffff;
+}
+
+
+/* 对话框样式 */
+QDialog {
+    background-color: #1a1a1a;
+    border: none;
+}
+
+/* 自定义对话框标题栏样式 */
+#dialogTitleBar {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #2d2d2d;
+    min-height: 36px;
+}
+
+/* 对话框标题样式 */
+#dialogTitle {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 36px;
+    min-width: 100px;
+}
+
+/* 对话框关闭按钮样式 */
+#dialogCloseButton {
+    background-color: transparent;
+    border: none;
+    min-width: 14px;
+    min-height: 14px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#dialogCloseButton:hover {
+    background-color: #4a4a4a;
+}
+
+#dialogCloseButton:pressed {
+    background-color: #5a5a5a;
+}
+
+/* 主窗口样式（原有内容保留） */
+
+
+/* 按钮样式（原有内容保留） */
+QPushButton {
+    background-color: #2e7d32;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+QPushButton:hover {
+    background-color: #388e3c;
+}
+
+QPushButton:pressed {
+    background-color: #43a047;
+}
+
+/* 状态栏样式（原有内容保留） */
+QStatusBar {
+    color: #ffffff;
+    background-color: #2d2d2d;
+    min-height: 32px;
+    font-size: 14px;
+    border-left: 2px solid #2e7d32;
+    border-right: 2px solid #2e7d32;
+    border-bottom: 2px solid #2e7d32;
+    border-top: none;
+}
+
+/* 状态栏消息样式 */
+QStatusBar::item {
+    border: none;
+    padding: 5px;
+}
+
+/* 添加到faststart.qss文件中 */
+QLabel {
+    color: #ffffff; /* 白色文字，确保高对比度 */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 针对特定场景的优化 */
+QLabel[style="font-weight: bold"] {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* 确保所有状态下的可见性 */
+QLabel:hover {
+    color: #ffffff;
+}
+
+
+/* 对话框样式 */
+QDialog {
+    background-color: #1a1a1a;
+    border: none;
+}
+
+/* 表单输入样式 */
+QLineEdit, QSpinBox {
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    color: #ffffff;
+}
+
+/* 输入框焦点边框 */
+QLineEdit:focus, QSpinBox:focus {
+    border: 1px solid #007acc;
+}
+
+/* 文件对话框样式 */
+QFileDialog {
+    background-color: #1a1a1a;
+    border: none;
+}
+
+/* 按钮框样式 */
+QHBoxLayout, QFormLayout {
+    background-color: transparent;
+}
+
+/* 错误提示样式 */
+QLabel[styleClass="error"] {
+    color: #ff4444;
+    background-color: #441111;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    background: #2d2d2d;
+    width: 12px;
+}
+
+QScrollBar::handle:vertical {
+    background: #4a4a4a;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 分割器样式 */
+QSplitter::handle:horizontal {
+    background: #2d2d2d;
+    width: 2px;
+}
+
+QSplitter::handle:vertical {
+    background: #2d2d2d;
+    height: 2px;
+}
+
+/* 旋钮样式 */
+QSpinBox::up-button, QSpinBox::down-button {
+    background-color: #3a3a3a;
+    border: none;
+    width: 20px;
+}
+
+QSpinBox::up-arrow, QSpinBox::down-arrow {
+    border: none;
+}
+
+/* 输入框选择状态 */
+QLineEdit:focus {
+    selection-background-color: #007acc;
+}
+
+/* 选择框样式 */
+QCheckBox {
+    spacing: 5px;
+    color: #ffffff;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url('assets/images/check-off.png');
+    border: none;
+    background-color: transparent;
+}
+
+QCheckBox::indicator:checked {
+    image: url('assets/images/check-on.png');
+    border: none;
+    background-color: transparent;
+}
+
+QCheckBox::indicator:unchecked:hover {
+
+}
+
+QCheckBox::indicator:checked:hover {
+
+}
+
+/* 添加到faststart.qss文件中 */
+QSpinBox {
+    background-color: #2d2d2d;
+    border: none;
+    color: #ffffff;
+    padding: 5px;
+}
+
+/* 设置上下箭头图标 */
+QSpinBox::up-button {
+    background-color: #3a3a3a;
+    border: none;
+    width: 16px;
+    height: 16px;
+    image: url('assets/images/up-arrow.png'); /* 使用自定义图标 */
+    /* 或者使用纯色填充 */
+    /* background-image: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #4a4a4a, stop:1 #3a3a3a); */
+}
+
+QSpinBox::down-button {
+    background-color: #3a3a3a;
+    border: none;
+    width: 16px;
+    height: 16px;
+    image: url('assets/images/down-arrow.png'); /* 使用自定义图标 */
+    /* 或者使用纯色填充 */
+    /* background-image: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #4a4a4a, stop:1 #3a3a3a); */
+}
+
+/* 悬停状态 */
+QSpinBox::up-button:hover {
+    background-color: #4a4a4a;
+}
+
+QSpinBox::down-button:hover {
+    background-color: #4a4a4a;
+}

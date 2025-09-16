@@ -1,0 +1,8 @@
+__pycache__/
+备份/
+.idea/
+output/
+
+# ignore log files and databases
+FastStart_Pyinstaller.json
+*.bat
