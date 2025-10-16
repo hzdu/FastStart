@@ -24,4 +24,4 @@ python FastStart.py
 
 ```
 
-编译好的Windows X64：https://wwya.lanzoue.com/i36vq36cch0b
+打包好的：https://wwya.lanzoue.com/ihPX838j3z4d
