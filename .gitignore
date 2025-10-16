@@ -5,4 +5,4 @@ output/
 
 # ignore log files and databases
 FastStart_Pyinstaller.json
-*.bat
+备份.bat
