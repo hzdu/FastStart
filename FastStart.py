@@ -157,14 +157,18 @@ class AddProgramDialog(QDialog):
             self.path_edit.setText(path)
 
     def validate_and_accept(self):
-        path = self.path_edit.text()
+        # 1. 从输入框获取并清理文本
+        path = self.path_edit.text().strip()
+        name = self.name_edit.text().strip()
+
         if not path or not os.path.exists(path):
-            self.error_label.setText("程序路径不存在，请重新选择")
+            self.error_label.setText("程序路径无效或不存在，请重新选择")
             return
-            
-        if not self.name_edit.text().strip():
-            self.error_label.setText("程序名称不能为空")
-            return
+
+        if not name:
+            file_name = os.path.basename(path)
+            program_name, _ = os.path.splitext(file_name)
+            self.name_edit.setText(program_name)
 
         self.error_label.setText("")
         self.accept()
@@ -717,15 +721,19 @@ class MainWindow(QMainWindow):
         try:
             with open('start.json', 'r', encoding='utf-8') as f:
                 config_data = json.load(f)
-                self.left_panel.setRowCount(0) # 清空表格
+                self.left_panel.setRowCount(0)  # 清空表格
 
                 programs = []
                 # 兼容旧格式 (list) 和新格式 (dict)
                 if isinstance(config_data, dict):
                     programs = config_data.get('programs', [])
-                    # 加载“启动后退出”设置
+
+                    # 在设置复选框状态前先阻止信号，防止触发 save_programs
+                    self.exit_after_launch_checkbox.blockSignals(True)
                     self.exit_after_launch_checkbox.setChecked(config_data.get('exit_after_launch', False))
-                    
+                    # 设置完成后再恢复信号
+                    self.exit_after_launch_checkbox.blockSignals(False)
+
                     schedule_data = config_data.get('schedule', {})
                     self.is_schedule_enabled = schedule_data.get('enabled', False)
                     if self.is_schedule_enabled:
@@ -738,7 +746,7 @@ class MainWindow(QMainWindow):
                 for item_data in programs:
                     name = item_data['name']
                     path = item_data['path']
-                    delay = str(item_data.get('deply', 0))
+                    delay = item_data['delay']
                     self.left_panel.add_program_item(name, path, delay)
         except FileNotFoundError:
             pass
@@ -749,25 +757,24 @@ class MainWindow(QMainWindow):
             name_item = self.left_panel.item(i, 0)
             delay_item = self.left_panel.item(i, 1)
 
-            # 添加健壮性检查，防止在拖动过程中出现空项
             if not name_item or not delay_item:
                 continue
-            
+
             name = name_item.text()
             path = name_item.data(Qt.UserRole)
             delay = delay_item.text() or "0"
-            
+
             try:
                 delay_int = int(delay)
             except (ValueError, TypeError):
                 delay_int = 0
-            
+
             programs.append({
                 "name": name,
                 "path": path,
-                "deply": delay_int
+                "delay": delay_int
             })
-        
+
         config_data = {
             "programs": programs,
             "exit_after_launch": self.exit_after_launch_checkbox.isChecked(),
@@ -778,7 +785,6 @@ class MainWindow(QMainWindow):
         }
         with open('start.json', 'w', encoding='utf-8') as f:
             json.dump(config_data, f, ensure_ascii=False, indent=4)
-        # 显示保存状态
         self.statusBar.showMessage("配置已保存", 2000)
 
     def add_program(self):

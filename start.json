@@ -3,32 +3,32 @@
         {
             "name": "Ditto.exe",
             "path": "D:/greensoftware/Ditto/Ditto.exe",
-            "deply": 1
+            "delay": 1
         },
         {
             "name": "MouseInc.exe",
             "path": "D:/greensoftware/MouseInc/MouseInc.exe",
-            "deply": 1
+            "delay": 1
         },
         {
             "name": "XMouseButtonControl.exe",
             "path": "D:/greensoftware/XMouseButtonControl/64bit (x64)/XMouseButtonControl.exe",
-            "deply": 1
+            "delay": 1
         },
         {
             "name": "Listary.exe",
             "path": "D:/installsoftware/Listary/Listary.exe",
-            "deply": 1
+            "delay": 1
         },
         {
             "name": "clash-verge.exe",
             "path": "D:/installsoftware/ClashVerge/clash-verge.exe",
-            "deply": 0
+            "delay": 0
         }
     ],
     "exit_after_launch": false,
     "schedule": {
         "enabled": false,
-        "time": "22:14:48"
+        "time": "09:40:06"
     }
 }
