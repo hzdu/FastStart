@@ -3,12 +3,13 @@ import os
 import sys
 
 from PySide6.QtCore import Qt, QTimer, Signal, QPoint, QTime, QDate
-from PySide6.QtGui import QIcon, QPixmap, QDrag, QMouseEvent, QAction
+from PySide6.QtGui import QIcon, QMouseEvent, QAction
 from PySide6.QtWidgets import (QApplication, QMainWindow, QSplitter,
-                               QListWidget, QWidget, QVBoxLayout, QPushButton,
-                               QListWidgetItem, QStatusBar, QDialog, QFormLayout,
+                               QWidget, QVBoxLayout, QPushButton,
+                               QStatusBar, QDialog, QFormLayout,
                                QLineEdit, QSpinBox, QHBoxLayout, QFileDialog, QLabel,
-                               QMessageBox, QTableWidget, QTableWidgetItem, QHeaderView, QTimeEdit, QAbstractItemView, QSystemTrayIcon, QMenu, QCheckBox)
+                               QMessageBox, QTableWidget, QTableWidgetItem, QHeaderView, QTimeEdit, QAbstractItemView,
+                               QSystemTrayIcon, QMenu, QCheckBox)
 
 
 class DeleteConfirmationDialog(QMessageBox):
